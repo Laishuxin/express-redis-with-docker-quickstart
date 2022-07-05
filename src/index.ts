@@ -20,6 +20,7 @@ app.post('/api', async (req, res) => {
   try {
     const body = req.body
     await client.SET('demo', JSON.stringify(body))
+    
     const res = await client.save()
     console.log('save: ', res)
   } catch (err) {
